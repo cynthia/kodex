@@ -1,0 +1,20 @@
+{
+  "endpoint": "google",
+  "model": "flash",
+  "endpoints": {
+    "google": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "models": {
+        "pro": "gemini-3.1-pro-preview",
+        "flash": "gemini-3.1-flash-lite-preview"
+      }
+    },
+    "openrouter": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "models": {
+        "trinity": "arcee-ai/trinity-large-preview:free",
+        "nemotron": "nvidia/nemotron-3-nano-30b-a3b:free"
+      }
+    }
+  }
+}

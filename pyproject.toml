@@ -1,0 +1,12 @@
+[project]
+name = "kodex"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["openai>=1.0"]
+
+[project.scripts]
+kodex = "kodex.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

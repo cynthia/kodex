@@ -1,0 +1,106 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "bash",
+      "description": "Run a shell command and return stdout+stderr.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "command": {"type": "string", "description": "The shell command to execute"}
+        },
+        "required": ["command"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "read_file",
+      "description": "Read and return the contents of a file.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {"type": "string", "description": "Absolute path to the file"}
+        },
+        "required": ["file_path"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "write_file",
+      "description": "Write content to a file, creating parent directories as needed.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {"type": "string", "description": "Absolute path to the file"},
+          "content": {"type": "string", "description": "Content to write"}
+        },
+        "required": ["file_path", "content"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "edit",
+      "description": "Replace the first occurrence of old_string with new_string in a file. Fails if old_string is not found.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {"type": "string", "description": "Absolute path to the file"},
+          "old_string": {"type": "string", "description": "The exact text to find"},
+          "new_string": {"type": "string", "description": "The replacement text"}
+        },
+        "required": ["file_path", "old_string", "new_string"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "glob",
+      "description": "Find files matching a glob pattern. Returns one path per line.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "pattern": {"type": "string", "description": "Glob pattern (e.g. '**/*.py')"},
+          "path": {"type": "string", "description": "Root directory to search from (default: cwd)"}
+        },
+        "required": ["pattern"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "grep",
+      "description": "Search file contents for a regex pattern. Returns matching lines as 'file:line_number: content'.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "pattern": {"type": "string", "description": "Regex pattern to search for"},
+          "path": {"type": "string", "description": "File or directory to search (default: cwd)"},
+          "include": {"type": "string", "description": "Only search files matching this glob (e.g. '*.py')"}
+        },
+        "required": ["pattern"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "list_files",
+      "description": "List files and directories at the given path.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "Absolute path to list"}
+        },
+        "required": ["path"]
+      }
+    }
+  }
+]
